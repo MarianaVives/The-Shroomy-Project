@@ -40,27 +40,30 @@ alter table mushroomInfo modify region varchar(50);
 #update mushroomInfo set region="Worldwide" where name="Trametes versicolor";
 
 #Create a table for an edible mushroom e-commerce
-create table mushroomStock(id int AUTO_INCREMENT PRIMARY KEY, name varchar(30), grams int, price int, availability boolean, commonName varchar(30), presentation varchar(10));
+drop table mushroomStock;
+create table mushroomStock(id int AUTO_INCREMENT PRIMARY KEY, name varchar(30), product_code varchar(8)not null, grams int, price int, availability boolean, commonName varchar(30), presentation varchar(10));
 describe mushroomStock;
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Tricholoma matsutake", 30, 500, true, "Matsutake", "dry");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Tricholoma matsutake", 100, 1000, true, "Matsutake", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Lentinula edodes", 200, 600, true, "Shiitake", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Lentinula edodes", 100, 450, true, "Shiitake", "dry");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tricholoma matsutake", "MA20D", 30, 500, true, "Matsutake", "dry");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tricholoma matsutake", "MA20F", 100, 1000, true, "Matsutake", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Lentinula edodes", "SHI30F", 200, 600, true, "Shiitake", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Lentinula edodes", "SHI30D", 100, 450, true, "Shiitake", "dry");
 #update mushroomStock set id=2 where name="Lentinula edodes";
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Tuber melanosporum", 50, 1000, false, "Black Truffles", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Tuber magnatum", 50, 3000, false, "White Truffles", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Pleurotus", 200, 100, true, "Oyster Mushroom", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Pleurotus", 100, 100, true, "Oyster Mushroom", "dry");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Agaricus bisporus B", 100, 120, true, "Portobello Mushroom", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Agaricus bisporus A", 200, 50, true, "Button Mushroom", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Calvatia gigantea", 100, 250, true, "Gigant Puffball", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Laetiporus sulphureus", 100, 350, true, "Chicken of the Woods", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Morchellaceae", 100, 800, true, "Morel", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Morchellaceae", 50, 600, false, "Morel", "dry");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", 80, 4000, true, "Cordyceps", "dry");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", 40, 8000, true, "Cordyceps", "powder");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", 100, 6000, false, "Cordyceps", "fresh");
-insert into mushroomStock (name, grams, price, availability, commonName, presentation) values("Tuber magnatum", 10, 3500, true, "White Truffles", "powder");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tuber melanosporum", "BT10F", 50, 1000, false, "Black Truffles", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tuber magnatum", "WT10F",50, 3000, false, "White Truffles", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Pleurotus", "OM40F", 200, 100, true, "Oyster Mushroom", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Pleurotus", "OM40D", 100, 100, true, "Oyster Mushroom", "dry");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Agaricus bisporus B", "PB50F", 100, 120, true, "Portobello Mushroom", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Agaricus bisporus A", "BM50F", 200, 50, true, "Button Mushroom", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Calvatia gigantea", "GP50F", 100, 250, true, "Gigant Puffball", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Laetiporus sulphureus", "CW40F", 100, 350, true, "Chicken of the Woods", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Morchellaceae", "MO20F", 100, 800, true, "Morel", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Morchellaceae", "MO20D", 50, 600, false, "Morel", "dry");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", "CO10D", 80, 4000, true, "Cordyceps", "dry");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", "CO10P", 40, 8000, true, "Cordyceps", "powder");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Ophiocordyceps sinensis", "CO10F", 100, 6000, false, "Cordyceps", "fresh");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tuber magnatum", "WT10P", 10, 3500, true, "White Truffles", "powder");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values("Tuber melanosporum", "BT10P", 10, 3000, true, "Black Truffles", "powder");
+insert into mushroomStock (name, product_code, grams, price, availability, commonName, presentation) values(null, "Null", null, null, true, null, null);
 select * from mushroomStock;
 
 # Create orders table
@@ -129,6 +132,25 @@ insert into providers (company_name,address,country_code,zipcode,product_supplie
 insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("The Fantastic Fungi", "Chershire Upon Thames #1308-a", "GBR", "LN31PQ", "Laetiporus sulphureus", 2200, 20, 10);
 insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Mogu nongchang", "Shezsheng Hin #A3405", "CN", "RCH4306", "Ophiocordyceps sinensis", 90000, 5, 0);
 select * from providers;
+
+#drop table promotions;
+create table promotions(id int auto_increment primary key, name varchar(40), commonName varchar(30), product_code varchar(8) not null, presentation varchar(10), discount int, min_qty int, max_qty int, discount_code varchar(20), month varchar(3), description varchar(100), availability boolean);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Lentinula edodes", "Shiitake", "SHI30F", "fresh", 15, 10, 20, "VALENTINES2026","FEB", "Perfect ingredient for that Valentine's Meal", true);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Morchellaceae", "Morel", "MO20F", "fresh", 10, 5, 10, "EASTER2026","APR", "Enjoy our Easter Harvest with your family.", true);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Morchellaceae", "Morel", "MO20D", "dry", 10, 10, 15, "EASTER2026","APR", "Enjoy our Easter Harvest with your family.", true);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Laetiporus sulphureus", "Chicken of the Woods", "CW40F", "fresh", 20, 20, 30, "AUTUMN2026","SEP", "Ideal ingredient for the best autumn comfort meal.", false);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Agaricus bisporous B", "Portobello Mushroom", "PB50F", "fresh", 15, 15, 25, "SUMMER2026","JUL", "Great for grilling it in the BBQ day on a hot summer's day.", false);
+insert into promotions (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Agaricus bisporous A", "Button Mushroom", "BM50F", "fresh", 15, 20, 25, "SPRING2026","MAR", "Enjoy out best seller produce during early Spring.", true);
+select * from promotions;
+
+#drop table sale;
+create table sale(id int auto_increment primary key, name varchar(40), commonName varchar(30), product_code varchar(8) not null, presentation varchar(10), discount int default 50, min_qty int, max_qty int, discount_code varchar(20), month varchar(3), description varchar(100), availability boolean);
+insert into sale (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Pleurotus", "Oyster Mushroom", "OM40D", "dry", 50, 10, 20, "WINTERSALE2025","DEC", "UP TO 50% OFF - SELECTED PRODUCTS ONLY", true);
+insert into sale (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Pleurotus", "Oyster Mushroom", "OM40F", "fresh", 50, 10, 20, "WINTERSALE2025","DEC", "UP TO 50% OFF - SELECTED PRODUCTS ONLY", true);
+insert into sale (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Calvatia gigantea", "Gigant Puffball", "GP50F", "fresh", 50, 10, 20, "SUMMERSALE2026","AUG", "UP TO 50% OFF - SELECTED PRODUCTS ONLY", true);
+insert into sale (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values("Agaricus bisporus B", "Portobello Mushroom", "PB50F", "fresh", 50, 10, 20, "SUMMERSALE2026","AUG", "UP TO 50% OFF - SELECTED PRODUCTS ONLY", true);
+insert into sale (name, commonName, product_code, presentation, discount, min_qty, max_qty, discount_code, month, description, availability) values(null, null, "null", null,null, null,null, null, null, null, false);
+select * from sale;
 
 #delete a row
 delete from mushroomInfo WHERE id=8 and type='non-edible';
@@ -269,3 +291,30 @@ select avg(price) from usuk_providers; #4900
 select company_name, avg(price) from usuk_providers group by company_name having avg(price)>(select avg(price) from usuk_providers); #7600
 
 #SQL String functions
+#concat - Concatenating 2 strings - concatenate address, country code and zipcode
+select concat(address," ", country_code , " ",zipcode) as complete_address from usuk_providers;
+#substring break a string to extract only a value - get first 3 letters of name of product supplied
+select substr(product_supplied,1,3) as product_initials, product_supplied from usuk_providers;
+#replace text
+select replace(company_name, "Mushroom", "fungi") from usuk_providers;
+#get length of all company names
+select length(company_name) from usuk_providers where company_name="The Fantastic Fungi";
+select trim(" f u n g i  ");
+#get top limit - sql server is top/
+select company_name from usuk_providers limit 3;
+
+#Unions - bind iformation into a single table
+select * from promotions;
+select * from sale;
+#duplicates are allowed in unions
+select * from promotions union (select * from sale);
+# Get products on sale with promotion - use intersect if supported (Oracle)
+select * from promotions where product_code in (select product_code from sale);
+# Exists - if product is on sale in the sales table, return all stock from a different table
+select * from mushroomInfo where exists(select * from sale where product_code="PB50F");
+# Case - Manipulate content of table on runtime and give a table on fly
+# add extra 10 percent to portobello PB50F 
+select name, commonName, discount, case product_code
+when "PB50F" then discount+10
+else discount end
+'New Discount' from promotions;
