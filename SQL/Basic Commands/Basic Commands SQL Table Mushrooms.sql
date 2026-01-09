@@ -114,6 +114,22 @@ insert into loyalty_customers (client_name, client_lastname, discount_applied) v
 insert into loyalty_customers (client_name, client_lastname, discount_applied) value("Vladimir", "Putin", 100);insert into loyalty_customers (client_name, client_lastname, discount_applied) value("Mia", "Labouf", 50);
 select * from loyalty_customers;
 
+#drop table providers;
+create table providers (id int AUTO_INCREMENT PRIMARY KEY, company_name varchar(20), address varchar(50), country_code varchar(3), zipcode varchar(7), product_supplied varchar(30), price int, quantity_purchased_kg int, discount_applied boolean);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Mushroom Farmers Inc", "Palm Alto #567-3", "USA", "084632", "Agaricus bisporus A", 5000, 8, 5);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Mushroom Farmers Inc", "Palm Alto #567-3", "USA", "084632", "Agaricus bisporus B", 8000, 10, 5);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Mushroom Farmers Inc", "Palm Alto #567-3", "USA", "084632", "Morchellaceae", 10000, 15, 0);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Kinoko-en", "Shibuya Av.Kapporo #1845", "JPN", "12948", "Tricholoma matsutake", 20000, 15, 10);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Kinoko-en", "Shibuya Av.Kapporo #1845", "JPN", "12948", "Lentinula edodes", 12000, 10, 10);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("La Farma di Fungo", "Campinia di Roma Trastevere #41", "ITL", "I3473", "Tuber melanosporum", 50000, 1, 0);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("La Farma di Fungo", "Campinia di Roma Trastevere #41", "ITL", "I3473", "Tuber magnatum", 90000, 1, 0);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("The Fantastic Fungi", "Chershire Upon Thames #1308-a", "GBR", "LN31PQ", "Pleurotus", 6000, 20, 10);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("The Fantastic Fungi", "Chershire Upon Thames #1308-a", "GBR", "LN31PQ", "Calvatia gigantea", 1200, 10, 10);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("The Fantastic Fungi", "Chershire Upon Thames #1308-a", "GBR", "LN31PQ", "Grifola frondosa", 1900, 15, 15);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("The Fantastic Fungi", "Chershire Upon Thames #1308-a", "GBR", "LN31PQ", "Laetiporus sulphureus", 2200, 20, 10);
+insert into providers (company_name,address,country_code,zipcode,product_supplied,price,quantity_purchased_kg,discount_applied) value("Mogu nongchang", "Shezsheng Hin #A3405", "CN", "RCH4306", "Ophiocordyceps sinensis", 90000, 5, 0);
+select * from providers;
+
 #delete a row
 delete from mushroomInfo WHERE id=8 and type='non-edible';
 select * from mushroomInfo;
@@ -245,3 +261,11 @@ select lm.client_lastname, lm.discount_applied, o.order_total from loyalty_custo
 inner join orders as o on lm.client_lastname=o.client_lastname 
 where lm.discount_applied >20 and o.order_total>=6000;
 
+# Create view to only get information from providers from UK And USA
+create view usuk_providers as select * from providers where country_code="USA" or country_code="GBR";
+select * from usuk_providers;
+select avg(price) from usuk_providers; #4900
+#Select company whose prices are above average
+select company_name, avg(price) from usuk_providers group by company_name having avg(price)>(select avg(price) from usuk_providers); #7600
+
+#SQL String functions
