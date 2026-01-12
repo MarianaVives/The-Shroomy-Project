@@ -67,33 +67,65 @@ insert into mushroomStock (name, product_code, grams, price, availability, commo
 select * from mushroomStock;
 
 # Create orders table
-create table orders(client_id int AUTO_INCREMENT PRIMARY KEY, client_name varchar(20), client_lastname varchar(20), age int, country_code varchar(3), product_qty int, order_total int, order_status varchar(15), loyalty_customer boolean, premium_member boolean, order_date varchar(10));
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Mercedes", "Benz", 76, "GER", 15, 5000, "Delivered", true, true, "10-10-2015");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Steve", "Harrington", 25, "USA", 4, 290, "In progress", true, false, "19-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Maria Fernanda", "Farias", 35, "ESP", 3, 1000, "Cancelled", false, false, "12-03-2017");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Jean Claude", "Lafayette", 42, "FRA", 7, 4000, "Delivered", true, true, "01-06-2016");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stephanie", "Khumalo", 19, "KE", 3, 900, "Open", false, false, "20-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Ryu", "Jung", 27, "KR", 5, 1800, "In progress", true, false, "18-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Jorge", "Perez", 52, "MEX", 8, 3800, "Delivered", true, true, "11-04-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Linda", "Chang", 19, "CN", 2, 6000, "Delivered", true, true, "29-07-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Charlotte", "Bronte", 21, "GBR", 2, 2000, "Delivered", false, true, "07-11-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Anders", "Hansen", 29, "NOR", 7, 9000, "Open", true, true, "29-08-2010");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Dolly", "Parton", 26, "CAN", 30, 1600, "Delivered", true, true, "13-05-2015");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Kim", "Joo", 36, "KR", 6, 3200, "Delivered", true, false, "13-05-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Belinda", "Benavides Gomez", 47, "MEX", 2, 2000, "Delivered", true, false, "10-02-2017");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Hans", "Guttenberg", 67, "GER", 1, 500, "Open", false, false, "20-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Kuba", "Wachowski", 27, "POL", 5, 1800, "Delivered", false, false, "16-12-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Larry", "Sulivan", 82, "USA", 2, 5500, "Delivered", false, false, "09-11-2017");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Vladimir", "Putin", 78, "RUS", 1, 6000, "Cancelled", false, false, "06-10-2015");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stacey", "Lopez", 18, "USA", 2, 2000, "Open", false, true, "20-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Lee", "Hung", 26, "KR", 2, 1900, "Cancelled", true, false, "13-05-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Fatima", "Khalid", 46, "UAE", 8, 9000, "Delivered", true, false, "19-12-2018");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stephen", "Ndola", 42, "ZM", 2, 850, "Open", true, false, "20-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Niklas", "Kvarforth", 43, "SWE", 2, 1900, "In Progress", true, false, "18-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Greta", "Zuckerberg", 18, "AT", 4, 3500, "Delivered", true, false, "30-07-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Hui", "Feng", 68, "CN", 6, 15000, "Delivered", true, false, "01-08-2019");
-insert into orders (client_name, client_lastname, age, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Sandra", "Pavlova", 29, "RUS", 4, 26000, "Cancelled", true, false, "31-08-2018");
+drop table orders;
+create table orders(client_name varchar(20), client_lastname varchar(20), age int, internal_id varchar(10), foreign key(internal_id) references customers(internal_id) ON DELETE CASCADE, country_code varchar(3), product_qty int, order_total int, order_status varchar(15), loyalty_customer boolean, premium_member boolean, order_date varchar(10));
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Mercedes", "Benz", 76, "76MBG", "GER", 15, 5000, "Delivered", true, true, "10-10-2015");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Steve", "Harrington", 25, "25SHU", "USA", 4, 290, "In progress", true, false, "19-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Maria Fernanda", "Farias", 35, "35MFE", "ESP", 3, 1000, "Cancelled", false, false, "12-03-2017");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Jean Claude", "Lafayette", 42, "42JLF", "FRA", 7, 4000, "Delivered", true, true, "01-06-2016");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stephanie", "Khumalo", 19, "19SKKE", "KE", 3, 900, "Open", false, false, "20-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Ryu", "Jung", 27, "27RJKR", "KR", 5, 1800, "In progress", true, false, "18-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Jorge", "Perez", 52,  "52JPM", "MEX", 8, 3800, "Delivered", true, true, "11-04-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Linda", "Chang", 19, "19LCCN", "CN", 2, 6000, "Delivered", true, true, "29-07-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Charlotte", "Bronte", 21, "21CBGB", "GBR", 2, 2000, "Delivered", false, true, "07-11-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Anders", "Hansen", 29, "29AHN", "NOR", 7, 9000, "Open", true, true, "29-08-2010");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Dolly", "Parton", 26, "26DPCA", "CAN", 30, 1600, "Delivered", true, true, "13-05-2015");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Kim", "Joo", 36, "36KJKR", "KR", 6, 3200, "Delivered", true, false, "13-05-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Belinda", "Benavides Gomez", 47, "47BBM", "MEX", 2, 2000, "Delivered", true, false, "10-02-2017");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Hans", "Guttenberg", 67, "67HGG", "GER", 1, 500, "Open", false, false, "20-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Kuba", "Wachowski", 27, "27KWP", "POL", 5, 1800, "Delivered", false, false, "16-12-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Larry", "Sulivan", 82, "82LSU", "USA", 2, 5500, "Delivered", false, false, "09-11-2017");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Vladimir", "Putin", 78, "78VPR", "RUS", 1, 6000, "Cancelled", false, false, "06-10-2015");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stacey", "Lopez", 18, "18SLU" ,"USA", 2, 2000, "Open", false, true, "20-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Lee", "Hung", 26, "26LHKR", "KR", 2, 1900, "Cancelled", true, false, "13-05-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Fatima", "Khalid", 46, "46FKUA", "UAE", 8, 9000, "Delivered", true, false, "19-12-2018");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Stephen", "Ndola", 42, "42SNZ", "ZM", 2, 850, "Open", true, false, "20-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Niklas", "Kvarforth", 43, "43NKS", "SWE", 2, 1900, "In Progress", true, false, "18-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Greta", "Zuckerberg", 18, "18GZA", "AT", 4, 3500, "Delivered", true, false, "30-07-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Hui", "Feng", 68, "68HFCN","CN", 6, 15000, "Delivered", true, false, "01-08-2019");
+insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Sandra", "Pavlova", 29, "29SPR", "RUS", 4, 26000, "Cancelled", true, false, "31-08-2018");
+#This row will fail as you cannot update the internal ID in the "foreign table"
+#insert into orders (client_name, client_lastname, age, internal_id, country_code, product_qty, order_total,order_status, loyalty_customer, premium_member, order_date) value("Sandra", "Pavlova", 29, "28SPR", "RUS", 4, 26000, "Cancelled", true, false, "31-08-2018");
 select * from orders;
+
+drop table customers;
+create table customers(name varchar(20), lastname varchar(20), age int, country_code varchar(20), internal_id varchar(8) PRIMARY KEY, address varchar(50), join_date varchar(10),  loyalty_customer boolean, premium_member boolean);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Mercedes", "Benz", 76, "GER", "76MBG", "Frankfurt Avenue 2387 - 29", "10-10-2015", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Steve", "Harrington", 25, "USA", "25SHU", "Palm Ave. 34 int 4", "19-08-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Maria Fernanda", "Farias", 35, "ESP", "35MFE", "Callejones de los Remedios 2", "12-03-2017", false, false );
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Jean Claude", "Lafayette", 42, "FRA", "42JLF", "La Rue la Paix 43","01-06-2016", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Stephanie", "Khumalo", 19, "KE", "19SKKE","Serenghetti The House 372 - 23",  "20-08-2019",false, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Ryu", "Jung", 27, "KR", "27RJKR", "SSAM Bao Ji Tonkotsu #499", "18-08-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Jorge", "Perez", 52, "MEX", "52JPM", "Av de los Ahuehuetes 387","11-04-2018", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Linda", "Chang", 19, "CN", "19LCCN", "Xi Ping Jung 347","29-07-2019", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Charlotte", "Bronte", 21, "GBR", "21CBGB", "Roper Avenue 37 - 2", "07-11-2018", false, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Anders", "Hansen", 29, "NOR", "29AHN", "Jorvik Internal 3", "29-08-2010", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Dolly", "Parton", 26, "CAN", "26DPCA", "Maple Log Avenue 18", "13-05-2015", true, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Kim", "Joo", 36, "KR", "36KJKR", "Ji Jeon St 599", "13-05-2018", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Belinda", "Benavides Gomez", 47, "MEX", "47BBM", "Calle De Los Rincones 9", "10-02-2017", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Hans", "Guttenberg", 67, "GER", "67HGG", "Guttenberg Haus 654", "20-08-2019", false, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Kuba", "Wachowski", 27, "POL", "27KWP", "Mt Wazouzki 3746","16-12-2018", false, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Larry", "Sulivan", 82, "USA", "82LSU", "Santa Barbara St. 59", "09-11-2017", false, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Vladimir", "Putin", 78, "RUS", "78VPR", "St. Petersburg 8764", "06-10-2015", false, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Stacey", "Lopez", 18, "USA", "18SLU", "Mt of the Joy 18", "20-08-2019", false, true);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Lee", "Hung", 26, "KR", "26LHKR", "The Street of Korea 45", "13-05-2018", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Fatima", "Khalid", 46, "UAE", "46FKUA", "Burj Khalifa #8-a", "19-12-2018", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Stephen", "Ndola", 42, "ZM", "42SNZ", "Victoria Falls Building #72-A1", "20-08-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Niklas", "Kvarforth", 43, "SWE", "43NKS", "Norra Backebo 85",  "18-08-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Greta", "Zuckerberg", 18, "AT", "18GZA", "Glocknerstrasse 73", "30-07-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Hui", "Feng", 68, "CN", "68HFCN", "Bei Huan Wen 519", "01-08-2019", true, false);
+insert into customers (name, lastname, age, country_code, internal_id, address, join_date, loyalty_customer, premium_member) value("Sandra", "Pavlova", 29, "RUS", "29SPR", "The Kremlin #81", "31-08-2018", true, false);
+select * from customers;
 
 drop table loyalty_customers;
 create table loyalty_customers(client_id int AUTO_INCREMENT PRIMARY KEY, client_name varchar(20), client_lastname varchar(20), discount_applied int);
@@ -318,3 +350,11 @@ select name, commonName, discount, case product_code
 when "PB50F" then discount+10
 else discount end
 'New Discount' from promotions;
+
+#Delete a record from a primary key before deleting the dependency (foreign key)
+#delete from customers where internal_id="29SPR"; # Cannot delete or update parent row
+#delete from orders where internal_id="29SPR";  #Deleted because there is no dependency
+#delete from customers where internal_id="29SPR"; #After deleting dependency you can delete parent data (primary key record)
+
+# By applying ON DELETE CASCADE now we can delete from parent table without having to delete the child record first
+#delete from customers where internal_id="76MBG";
