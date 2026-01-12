@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.openqa.selenium.WebDriver;
+
 
 public class jdbcConnection {
 	
@@ -20,7 +22,7 @@ public class jdbcConnection {
 		System.out.println("Connection established");
 		//Create Statement with the connection object - the object contains db information
 		Statement s = con.createStatement();
-		String getMushroomInfo = "select * from MushroomInfo";
+		String getMushroomInfo = "select * from MushroomInfo where name='Amanita Muscaria'";
 		ResultSet resultSet = s.executeQuery(getMushroomInfo);
 		System.out.println("Executing query");
 		while(resultSet.next()) {
@@ -30,6 +32,12 @@ public class jdbcConnection {
 		System.out.println("name: " + resultSet.getString("name"));
 		System.out.println("description: " + resultSet.getString("description"));
 		System.out.println("End of result set");
+		
+		// Example of use of DB for testing
+		// Create instance of Selenium Driver
+		//WebDriver driver= new ChromeDriver();
+		// Use element retrieved from DB to use as input data
+		//driver.findElement(By.xpath("myxpathlocator"),  resultSet.getString("name"))
 		}
 	}
 }

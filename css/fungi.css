@@ -261,3 +261,25 @@ footer {
 .carousel-dots .active {
   background: white;
 }
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0;
+}
+
