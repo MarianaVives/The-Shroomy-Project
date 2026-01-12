@@ -3,21 +3,37 @@ header {
     width: 100%;
 }
 
+/* Ensure full viewport height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Page wrapper with background image */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a0e00;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 body {
-    background: url(../images/brownShitakemushroom.png);
-    background-repeat: no-repeat;
     font-family: "Trirong", serif;
 }
 
 h1 {
-    color: #EDE1D4;
+    color: #344c07;
     font-family: "Trirong", serif;
     justify-content: space-between;
     display: flex;
 }
 
 h2 {
-    color: blanchedalmond;
+    color: rgb(70, 99, 58);
     display: flex;
 }
 
@@ -29,7 +45,7 @@ h2 {
 }
 
 p {
-    color: beige;
+    color: rgb(70, 99, 58);
     font-family: "Trirong", serif;
     text-align: justify;
     text-justify: inter-word;
@@ -37,8 +53,11 @@ p {
 
 footer {
     width: 100%;
-    background: rgba(48, 37, 3, 0.416);
+    background: rgba(44, 76, 12, 0.799);
     background-blend-mode: darken;
+    display: grid;
+    min-height: 100vh; /* Or 100dvh for dynamic viewport height */
+    grid-template-rows: auto 1fr auto;
 }
 
 .navbar {
@@ -47,7 +66,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     top: 0px;
-    background: rgba(231, 179, 9, 0.299);
+    background: rgba(44, 76, 12, 0.799);
     background-blend-mode: darken;
     background-size: cover;
     color: rgb(255, 255, 255);
@@ -75,7 +94,7 @@ footer {
 }
 
 .nav-list li a:hover {
-    color: #3b3407;
+    color: #4050169f;
     /* Change the color on hover */
 }
 
@@ -102,7 +121,7 @@ footer {
 .btn:hover {
     background-color: #000;
     /* Change the background color on hover */
-    color: #ffd700;
+    color: #465a1b;
 }
 
 .div-gral-format {
@@ -127,17 +146,106 @@ footer {
 }
 
 .footerText{
-    color: white;
+    color: rgb(108, 110, 89);
 }
 
-.footerBottomText{
-    color: white;
-    font-size: 10px;
-    padding: 15px;
-    display: flex;
-    position: sticky;
-    align-items: center;
-    margin: 1%;
-    border: 10px 10px;
-    padding: 10px 50px;
+
+/* Footer styling */
+.footer {
+  padding: 1rem;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.6); /* optional overlay */
+  color: #575a52;
+
+  /* Prevent overflow beyond background */
+  width: 100%;
+  box-sizing: border-box;
+    backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+
+}
+
+/* Main content expands to push footer down */
+.content {
+  flex: 1;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  max-width: 500px;
+}
+
+.carousel-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots .active {
+  background: white;
 }

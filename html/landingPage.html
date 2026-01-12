@@ -11,87 +11,136 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <div>
-            <!-- Nav Bar -->
-            <nav class="navbar">
-                <ul class="nav-list" class="cormorant-h2">
-                    <li><a>Home</a></li>
-                    <li><a>Fungi</a></li>
-                    <li><a href="../html/fermentations.html">Processes</a></li>
-                    <li><a>Medicinal Mushrooms</a></li>
-                    <li><a>Folkloric Fungi</a></li>
-                </ul>
-            </nav>
+    <main class="content">
+        <!-- Page content -->
+
+        <!-- Header -->
+        <header>
+            <div>
+                <!-- Nav Bar -->
+                <nav class="navbar">
+                    <ul class="nav-list" class="cormorant-h2">
+                        <li><a id="menu-landingpage" href="../html/landingPage.html">Home</a></li>
+                        <li><a id="menu-fungi" href="../html/fungi.html">Fungi</a></li>
+                        <li><a id="menu-fermentations" href="../html/fermentations.html">Processes</a></li>
+                        <li><a id="menu-medicinal">Medicinal Mushrooms</a></li>
+                        <li><a id="menu-folkloric">Folkloric Fungi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Maybe Add Burger Menu -->
+        <div class="page">
+            <div class="div-headers">
+                <div id="h1">
+                    <h1>The Fungi Project</h1>
+                </div>
+                <div id="h2">
+                    <h2 class="cormorant-h2"><i>Every civilization on Earth has found some explanations to its
+                            existence, while
+                            lending
+                            these potential
+                            friends or foes its due respect.</i></h2>
+                </div>
+
+            </div>
+
+            <div id="parragraphBox" class="div-gral-format">
+                <div id="introTxt">
+                    <p>
+                        For millenia, fungi- or more specifically mushrooms- have been an enigma to humans.
+                        These organisms mysteriously grow out of the ground but unlike plants, they cannot grow their
+                        own source
+                        of
+                        food via the sun.
+                        Unlike animals, they cannot move. And as a matter of fact, just very few people ever thought of
+                        mushroom
+                        as
+                        alive organisms. <br>
+                        <br>
+                        &emsp; However, early pioneers in Botanics observed the nature of these organisms and mistakenly
+                        classified
+                        fungi
+                        within the plant kingdom.
+                        It was until very recently, in 1968, that these peculiar organisms got awarded their own
+                        indpendent
+                        lineage:
+                        "The fungi kingdom".
+                        Please, join this project to help widspread information regarding this resilient kingdom that
+                        has so
+                        much to
+                        offer to humanity.
+                    </p>
+                </div>
+            </div>
+            <script src="myscripts.js"></script>
+            <div class="carousel">
+                <div class="carousel-track">
+
+                    <div class="carousel-slide active">
+                        <img src="../images/BackgroundMushroomLichen.png" alt="Feature 1">
+                        <div class="carousel-text">
+                            <h2>For people who love the fungi kingdom</h2>
+                            <p>Manage tasks, track progress, and collaborate effortlessly.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="image2.jpg" alt="Feature 2">
+                        <div class="carousel-text">
+                            <h2>Built for Speed</h2>
+                            <p>Lightning-fast performance designed for modern teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="image3.jpg" alt="Feature 3">
+                        <div class="carousel-text">
+                            <h2>Secure & Reliable</h2>
+                            <p>Your data is protected with enterprise-grade security.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+
+                <div class="carousel-dots"></div>
+            </div>
+
         </div>
-    </header>
-
-    <!-- Maybe Add Burger Menu -->
-<div>
-    <div class="div-headers">
-        <div id="h1">
-            <h1>The Fungi Project</h1>
-        </div>
-        <div id="h2">
-            <h2 class="cormorant-h2"><i>Every civilization on Earth has found some explanations to its existence, while
-                    lending
-                    these potential
-                    friends or foes its due respect.</i></h2>
-        </div>
-
-    </div>
-
-    <div id="parragraphBox" class="div-gral-format">
-        <div id="introTxt">
-            <p>
-                For millenia, fungi- or more specifically mushrooms- have been an enigma to humans.
-                These organisms mysteriously grow out of the ground but unlike plants, they cannot grow their own source
-                of
-                food via the sun.
-                Unlike animals, they cannot move. And as a matter of fact, just very few people ever thought of mushroom
-                as
-                alive organisms. <br>
-                <br>
-                &emsp; However, early pioneers in Botanics observed the nature of these organisms and mistakenly classified
-                fungi
-                within the plant kingdom.
-                It was until very recently, in 1968, that these peculiar organisms got awarded their own indpendent
-                lineage:
-                "The fungi kingdom".
-                Please, join this project to help widspread information regarding this resilient kingdom that has so
-                much to
-                offer to humanity.
-            </p>
-        </div>
-    </div>
-
-</div>
-    <!-- Add Carrousel with pictures and links to the most attractive mushrooms for a quick access to its general information page-->
-
+        <!-- Add Carrousel with pictures and links to the most attractive mushrooms for a quick access to its general information page-->
+    </main>
 </body>
 
+
+
 <footer>
-    <div class="div-footer">
+    <div class="footer">
         <div id="footerSections">
             <div class="footerText">
-                 <span class="footerText">Author: Mariana Vives</p>
+                <span class="footerText">Author: Mariana Vives</p>
                     <div>
-                    <a href="https://www.facebook.com/groups/848976755503799/"><i class="bi bi-facebook btn" style="color: blanchedalmond;"></i></a>
-                    <a href="https://www.instagram.com/fungiacademy/"><i class="bi bi-instagram btn" style="color:blanchedalmond"></i></a>
-                    <a href="https://www.linkedin.com/in/mariana-vives-6462a093"><i class="bi bi-linkedin btn" style="color:blanchedalmond"></i></a>
+                        <a href="https://www.facebook.com/groups/848976755503799/"><i class="bi bi-facebook btn"
+                                style="color: blanchedalmond;"></i></a>
+                        <a href="https://www.instagram.com/fungiacademy/"><i class="bi bi-instagram btn"
+                                style="color:blanchedalmond"></i></a>
+                        <a href="https://www.linkedin.com/in/mariana-vives-6462a093"><i class="bi bi-linkedin btn"
+                                style="color:blanchedalmond"></i></a>
                     </div>
             </div>
         </div>
         <div id="footerBottom" class="footerBottomText">
-            <span>Copyright © 2025 Mariana Mushroom - All Rights Reserved.</span>
+            <span>Copyright © 2026 Mariana Mushroom - All Rights Reserved.</span>
         </div>
     </div>
 
